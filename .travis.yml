@@ -5,16 +5,16 @@ node_js:
 services:
   - docker
 
-before_script:
-  - cd udagram-api-feed
-  - npm i
-  - npm i -D typescript@latest
-  - npm run build
-  - cd ../udagram-api-user
-  - npm i
-  - npm i -D typescript@latest
-  - npm run build
-  - cd ..
+# before_script:
+#   - cd udagram-api-feed
+#   - npm i
+#   - npm i -D typescript@latest
+#   - npm run build
+#   - cd ../udagram-api-user
+#   - npm i
+#   - npm i -D typescript@latest
+#   - npm run build
+#   - cd ..
 
 script:
   - docker build -t udagram-api-feed ./udagram-api-feed
