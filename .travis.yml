@@ -8,9 +8,11 @@ services:
 before_script:
   - cd udagram-api-feed
   - npm i
+  - npm i -D typescript@latest
   - npm run build
   - cd ../udagram-api-user
   - npm i
+  - npm i -D typescript@latest
   - npm run build
   - cd ..
 
