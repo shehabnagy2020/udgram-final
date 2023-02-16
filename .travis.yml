@@ -6,9 +6,9 @@ services:
   - docker
 
 before_script:
-  - cd udgram-api-feed
+  - cd udagram-api-feed
   - npm run build
-  - cd ../udgram-api-user
+  - cd ../udagram-api-user
   - npm run build
   - cd ..
 
@@ -20,11 +20,11 @@ script:
   - docker tag udagram-api-feed shehabnagy1998/udagram-api-feed:v1
   - docker tag udagram-api-user shehabnagy1998/udagram-api-user:v1
   - docker tag udagram-reverseproxy shehabnagy1998/udagram-reverseproxy:v1
-  - docker tag udagram-frontend shehabnagy1998/udagram-api-feed:v1
+  - docker tag udagram-frontend shehabnagy1998/udagram-frontend:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push shehabnagy1998/udagram-api-feed:v1
-  - docker push shehabnagy1998/udagram-api-user:v1
-  - docker push shehabnagy1998/udagram-reverseproxy:v1
-  - docker push shehabnagy1998/udagram-frontend:v1
+  - docker push shehabnagy1998/udagram-api-feed:v2
+  - docker push shehabnagy1998/udagram-api-user:v2
+  - docker push shehabnagy1998/udagram-reverseproxy:v2
+  - docker push shehabnagy1998/udagram-frontend:v2
