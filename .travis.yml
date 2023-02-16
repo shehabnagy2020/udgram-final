@@ -6,6 +6,7 @@ services:
   - docker
 
 before_script:
+  - npm i typescript
   - cd udagram-api-feed
   - npm run build
   - cd ../udagram-api-user
